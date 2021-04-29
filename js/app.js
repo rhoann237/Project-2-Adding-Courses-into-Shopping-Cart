@@ -111,13 +111,20 @@ function removeCourse(e) {
         e.target.parentElement.parentElement.remove();
     }
 }
-// Clears he shopping cart
+// Clears the shopping cart
 function clearCart() {
     // shoppingCartContent.innerHTML = '';
 
     while(shoppingCartContent.firstChild) {
         shoppingCartContent.removeChild(shoppingCartContent.firstChild);
     }
+
+    // Clear from Local Storage
+    clearLocalStorage();
+}
+// Clears the whole local storage
+function clearLocalStorage() {
+    localStorage.clear();
 }
 
 // Loads when document is ready and print courses into shopping cart
